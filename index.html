@@ -43,25 +43,26 @@
   </audio>
 
   <script>
-    const canciones = [
-      "audio/audio1.mp3"
-      "audio/audio3.mp3",
-      "audio/audio2.mp3"
-    ];
+  const canciones = [
+    "audio/audio1.mp3",
+    "audio/audio3.mp3",
+    "audio/audio2.mp3"
+  ];
 
-    let actual = 0;
-    const player = document.getElementById("player");
+  let actual = 0;
+  const player = document.getElementById("player");
 
-    // Reproduce la siguiente canción cuando termina
-    player.addEventListener("ended", () => {
-      actual++;
-      if (actual >= canciones.length) {
-        actual = 0; // 👈 Esto reinicia la lista
-      }
-      player.src = canciones[actual];
-      player.play();
-    });
-  </script>
+  player.addEventListener("ended", () => {
+    actual++;
+    if (actual >= canciones.length) {
+      actual = 0; 
+    }
+    player.src = canciones[actual];
+    player.play();
+  });
+</script>
+
 
 </body>
 </html>
+
